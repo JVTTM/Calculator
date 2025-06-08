@@ -1,0 +1,70 @@
+#include <iostream>
+#include <cctype>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+	double firstNum;
+	double secondNum;
+	double Total;
+	char symbol;
+	string checker;
+
+	cout << "______________Calculator______________\n";
+
+	while (true)
+	{
+		cout << "Enter the first number: ";
+		cin >> firstNum;
+
+		cout << "Enter the second number: ";
+		cin >> secondNum;
+
+		cout << "Please enter a symbol(+, -, *, /): ";
+		cin >> symbol;
+
+		switch (symbol) {
+		case '+':
+			Total = firstNum + secondNum;
+			cout << firstNum << '+' << secondNum << '=' << Total << endl;
+			break;
+
+		case '-':
+			Total = firstNum - secondNum;
+			cout << firstNum << '-' << secondNum << '=' << Total << endl;
+			break;
+
+		case '*':
+			Total = firstNum * secondNum;
+			cout << firstNum << '*' << secondNum << '=' << Total << endl;
+			break;
+
+		case '/':
+			if (secondNum == 0) {
+				cout << "Cannot divide by 0." << endl;
+				break;
+			}
+			else {
+				Total = firstNum / secondNum;
+				cout << firstNum << '/' << secondNum << '=' << Total << endl;
+				break;
+
+		default:
+			cout << "Please enter a valid input (+, -, *, /)\n";
+			break;
+			}
+		}
+
+		cout << "Would you like to continue(Yes/No)?: ";
+		cin >> checker;
+		std::transform(checker.begin(), checker.end(), checker.begin(),
+			[](unsigned char c) { return std::tolower(c); });
+		if (checker != "yes") {
+			break;
+		}
+	}
+	cout << "Goodbye.\n";
+
+	return 0;
+}
