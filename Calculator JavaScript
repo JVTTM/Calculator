@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script type="text/javascript">
+
+        
+        while (true){
+            let firstNum = parseFloat(prompt("Enter the first number: "));
+            let secondNum = parseFloat(prompt("Enter the second number: "));
+            let symbol = prompt("Please enter a symbol(+, -, *, /)");
+            let Total;
+
+            if (isNaN(firstNum) || isNaN(secondNum)){
+                alert("Invalid Input");
+                continue;
+            }
+
+            switch(symbol){
+                case "+":
+                    Total = (firstNum + secondNum);
+                    alert(`${firstNum}+${secondNum}=${Total}`);
+                    break;
+                
+                case "-":
+                    Total = firstNum - secondNum;
+                    alert(`${firstNum}-${secondNum}=${Total}`);
+                    break;
+                
+                case "*":
+                    Total = firstNum * secondNum;
+                    alert(`${firstNum}*${secondNum}=${Total}`);
+                    break;
+                    
+                case "/":
+                    Total = firstNum / secondNum;
+                    alert(`${firstNum}/${secondNum}=${Total}`);
+                    break;
+                    
+                default:
+                    alert("Please enter a valid input(+,-,*,/)");
+                    continue;
+                }
+                let Checker = prompt("Yould you like to continue(Yes/No):").toLowerCase();
+                if (Checker!="yes"){
+                    alert("Goodbye");
+                    break;}
+        }
+    </script>
+</head>
+<body>
+    
+    
+</body>
+</html>
